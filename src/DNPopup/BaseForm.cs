@@ -27,7 +27,7 @@ namespace DNPopup
             this.WindowState = FormWindowState.Minimized;
 
             this.mainNotifyIcon.Icon = Properties.Resources.AppIcon;
-            this.mainNotifyIcon.Text = "Messamger";
+            this.mainNotifyIcon.Text = "Messenger";
             this.mainNotifyIcon.BalloonTipTitle = "新着メッセージ";
             this.mainNotifyIcon.BalloonTipIcon = ToolTipIcon.None;
             
@@ -39,6 +39,14 @@ namespace DNPopup
         {
             this.mainNotifyIcon.BalloonTipText = message;
             this.mainNotifyIcon.ShowBalloonTip(duration);
+        }
+
+        private void exitCommandMenu_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("終了してもよろしいですか？", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                return;
+
+            Environment.Exit(0);
         }
     }
 }

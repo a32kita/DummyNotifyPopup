@@ -22,6 +22,11 @@ namespace DNPopup
                     baseForm.NotifyMessage(message.Message, 3000);
 
                 scheduledMessages.RemoveAll(m => targetMessages.Contains(m));
+
+                if (scheduledMessages.Count > 0)
+                    return;
+
+                Environment.Exit(0);
             };
 
             Application.Run(baseForm);
