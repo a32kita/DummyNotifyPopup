@@ -26,8 +26,10 @@ namespace DNPopup
             this.ClientSize = new Size(0, 0);
             this.WindowState = FormWindowState.Minimized;
 
-            this.mainNotifyIcon.Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location); ;
-            this.mainNotifyIcon.BalloonTipIcon = ToolTipIcon.Info;
+            this.mainNotifyIcon.Icon = Properties.Resources.AppIcon;
+            this.mainNotifyIcon.Text = "Messamger";
+            this.mainNotifyIcon.BalloonTipTitle = "新着メッセージ";
+            this.mainNotifyIcon.BalloonTipIcon = ToolTipIcon.None;
             
             this.mainTimer.Start();
         }
